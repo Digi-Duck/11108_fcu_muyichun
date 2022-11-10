@@ -1,11 +1,13 @@
 // loading
 
-window.onload = () => {
-  const body = document.querySelector("body");
+window.onload=()=>{
+  setTimeout(function(){
+    const body = document.querySelector("body");
   const bodyMask = document.querySelector(".loading");
   body.classList.add("loading-all");
   bodyMask.classList.add("loading-done");
-};
+  },1500)
+}
 
 // nav動畫
 
@@ -16,6 +18,7 @@ const menuBtn = document.querySelector(".menu-fix-btn");
 function navOn() {
   if (window.scrollY > 30) {
     nav.classList.add("navOn");
+    
     // logoBig.classList.add("logoOut");
     // slogan.classList.add("sloganOut");
     menuBtn.classList.add("menu-on");
@@ -37,9 +40,11 @@ window.onscroll = () => {
   let cHeight = document.documentElement.clientHeight;
   let sHeight = document.documentElement.scrollHeight;
   let sTop = document.documentElement.scrollTop;
-
   
   if (sTop>5328||sHeight == cHeight + Math.floor(sTop)) {
+    if(sHeight == cHeight + Math.floor(sTop)){
+    }else if(sTop>5328){
+    }
     
     footerPc.classList.add("footer-on");
     footerMb.classList.add("footerMb-on");
